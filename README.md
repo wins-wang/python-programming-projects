@@ -2,9 +2,11 @@
 
 ## 📘 Overview
 This repository showcases a curated collection of Python programming projects that I developed to systematically strengthen my core software development skills.  
+
 Each project emphasizes modular program design, top-down design principles, algorithmic thinking, object-oriented development, and simulation techniques, demonstrating a structured and practical approach to solving real-world problems.
 
 Through these projects, I explored essential programming domains such as file handling, algorithm optimization (O(n log n)), custom web scraping with HTML parsing, pseudo-random number generation, and Monte Carlo simulations.  
+
 I focused on writing clear, maintainable, and modular code, applying structured problem-solving strategies to progress from foundational concepts to applied programming practices with real-world relevance.
 
 ---

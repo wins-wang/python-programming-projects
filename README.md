@@ -1,11 +1,11 @@
 # Python Programming Projects Collection
 
 ## 📘 Overview
-This repository showcases a collection of projects developed during a foundational Python programming course.  
-Each project was designed to build core programming skills, including modular thinking, algorithmic problem-solving, object-oriented design, and basic system simulation.
+This repository showcases a curated collection of Python programming projects that I developed to systematically strengthen my core software development skills.  
+Each project emphasizes modular program design, top-down design principles, algorithmic thinking, object-oriented development, and simulation techniques, demonstrating a structured and practical approach to solving real-world problems.
 
-Throughout these projects, I practiced top-down design principles, implemented object-oriented solutions, developed basic web scrapers, and explored random number generation and Monte Carlo methods.  
-The collection demonstrates steady growth in both technical proficiency and programming craftsmanship.
+Through these projects, I explored essential programming domains such as file handling, algorithm optimization (O(n log n)), custom web scraping with HTML parsing, pseudo-random number generation, and Monte Carlo simulations.  
+I focused on writing clear, maintainable, and modular code, applying structured problem-solving strategies to progress from foundational concepts to applied programming practices with real-world relevance.
 
 ---
 

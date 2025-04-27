@@ -1,7 +1,3 @@
-#Assignment 0701 War and Random NUmbers
-#Dawei Wang May.22,2020
-#YouTube Video Link: https://youtu.be/0SNObokvu1M 
-#I have not given or received any unauthorized assistance on this assignment.
 import datetime
 
 class WarAndPeacePseudoRandomNumberGenerator:
@@ -12,29 +8,29 @@ class WarAndPeacePseudoRandomNumberGenerator:
         if seed == -1:
             self.seed = int(datetime.datetime.now().strftime('%H%M%S'))
         # otherwise, use seed assigned by user
-        else: 
+        else:
             self.seed = seed
-        # set the initial cursor position 
+        # set the initial cursor position
         self.cursor = self.seed
-    
+
     def random(self):
         'Generate the random number by using the seed and the code book'
         # open the code book
-        # term is a unit for generate a bits 
+        # term is a unit for generate a bits
         # self.number will be sum of all numbers from bits and return as a random number generated
         # length is the length of the code book, for cursor reset when overflow
-        # step is the difference that we read for the next 
-        self.infile = open("D:\\war-and-peace.txt",'rb')
-        term = 1 
+        # step is the difference that we read for the next
+        self.infile = open("war-and-peace.txt",'rb')
+        term = 1
         self.number = 0
-        length = 3226615 
+        length = 3226615
         step = 200
         # we will have 32 terms here and iteratively add to the random
         while term < 33:
             # set the cursor to the appropriate position and read the character at that position
             self.infile.seek(self.cursor)
             bits_a = self.infile.read(1)
-            # move the cursor to the next position and get back to the front when overflow 
+            # move the cursor to the next position and get back to the front when overflow
             if self.cursor + step > length:
                 self.cursor = step - length + self.cursor
             else:
@@ -60,13 +56,13 @@ class WarAndPeacePseudoRandomNumberGenerator:
         # close the code book and return the random number
         self.infile.close()
         return self.number
-              
+
 # find the length of code book
 # howlong = open(r"D:\\war-and-peace.txt")
 # str = howlong.read()
 # len(str)
 
-# class test 
+# class test
 prng = WarAndPeacePseudoRandomNumberGenerator()
 prng.random()
 prng.random()
@@ -92,7 +88,7 @@ def main():
     # generate 10,000 random number and store them in the list
     for i in range(10000):
        list.append(prng.random())
-    # find the 
+    # find the
     m = min(list)
     n = max(list)
     mean = sum(list)/len(list)

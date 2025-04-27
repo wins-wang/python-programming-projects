@@ -1,8 +1,3 @@
-#Assignment 0401 Goldbach's Deuce
-#Dawei Wang Apr.30,2020
-#YouTube Video Link: https://youtu.be/fWPXhHtdqqY 
-#I have not given or received any unauthorized assistance on this assignment.
-
 import random
 
 def info():
@@ -11,7 +6,7 @@ def info():
     Welcome!\n
     This program will allow you to test Goldbach Deuce
     Enter the number of random numbers you wish to create
-    Then enter a number that you want to test whether if there's sum of two 
+    Then enter a number that you want to test whether if there's sum of two
     numbers in this newly created random numbers list that equal to this number
 
     Exit any time by entering nothing.
@@ -21,7 +16,7 @@ def askInput():
     'Ask for the threshold that user wish to set'
     global i,n
     try:
-        # ask for valid input if input is none, return -1 for a termination 
+        # ask for valid input if input is none, return -1 for a termination
         i = input('Please enter the number of random numbers you want to generate.')
         if i == '':
             i = n = -1
@@ -86,14 +81,14 @@ def testGoldbachDeuce(n,nums):
     while n//2 >= nums[i]:
         # calculate the difference between n and element in the list
         dif = n - nums[i]
-        # binary search and see whether the difference in the list 
+        # binary search and see whether the difference in the list
         res = search(dif, nums)
         # if return value of search isn't -1, the difference in the list
         # return these two numbers in the list
         if res != -1:
             return nums[i],dif
         i += 1
-    # if there's no match, return -1 as indicator 
+    # if there's no match, return -1 as indicator
     return -1,-1
 
 
@@ -103,7 +98,7 @@ def printResult(i,a,b):
 
 def main():
     'Run this function, follow the instruction and test for the Goldbach deuce'
-    # print the introduction 
+    # print the introduction
     info()
     # get the input parameter
     i,n = askInput()
@@ -113,10 +108,10 @@ def main():
         nums = getRandom(i)
         # test for the Goldbach deuce
         res,dif = testGoldbachDeuce(n,nums)
-        # if it has match print the result 
+        # if it has match print the result
         if res != -1:
             printResult(n,res,dif)
-        # if there's no match, print the none result 
+        # if there's no match, print the none result
         else: print("There's no match, check the result below")
         # print the request number and random list for checking
         print ("Your number is {}, and the list of random are:".format(n))
@@ -125,8 +120,8 @@ def main():
 
         # restart the program
         i,n = askInput()
-    
+
     #info of service terminated
     print("\nThanks for using this program.\nService terminated")
-    
+
 main()

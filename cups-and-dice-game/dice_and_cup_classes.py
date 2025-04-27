@@ -1,8 +1,3 @@
-#Assignment 0501 Dice and Cups
-#Dawei Wang May.08,2020
-#YouTube Video Link: https://youtu.be/bVpTjcaqJQg  
-#I have not given or received any unauthorized assistance on this assignment.
-
 import random
 
 class SixSidedDie:
@@ -82,13 +77,13 @@ class Cup:
 
      def roll(self):
          'roll the cup and all the dies in the cup, return the sum of face value'
-         # set a default sum 
+         # set a default sum
          self.sum = 0
          # roll the dice in the cup one by one and calculate the sum
          for i in range(len(self.cup)):
              self.cup[i].roll()
              self.sum += self.cup[i].getFaceValue()
-         return self.sum 
+         return self.sum
 
      def getSum(self):
          'return the sum'

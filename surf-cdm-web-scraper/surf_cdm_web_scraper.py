@@ -1,10 +1,3 @@
-# I am not keen on distributing solutions to assignments.
-# They inevitably end up shared with other students.
-# Please be aware that it is an academic integrity violation to share this solution with others.
-# If someone in the future copies from this solution and I can trace it back to you, I ***will*** retroactively fail you.
-# This might very well results in the ***revoking*** of your degree.
-
-
 from html.parser import HTMLParser
 from urllib.request import urlopen,urljoin,urlparse,Request
 import re
@@ -62,10 +55,10 @@ class WebCrawler():
             content = response.read().decode()
         collector = Collector(url)
         collector.feed(content)
-        
+
         # get set of links
         urls = collector.getLinks()
-        
+
         # compute word frequencies
         page_text = collector.getPageText()
         #print(page_text)
@@ -95,10 +88,10 @@ class WebCrawler():
                 self.total_word_counters[word] += 1
             else:
                 self.total_word_counters[word] = 1
-    
+
     def printResults(self):
         'Print out the crawler results'
-        # iterate over the sorted dictionary by word count from the high count to lower, showing only the top 25 words 
+        # iterate over the sorted dictionary by word count from the high count to lower, showing only the top 25 words
         for index, word in enumerate(sorted(self.total_word_counters.items(), key=lambda x:x[1], reverse=True)[:25],start=1):
             print("{:2}){:10} {:10}".format(index, word[1], word[0]))
 
@@ -121,9 +114,9 @@ class Collector(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         'collects hyperlink URLs in their absolute format'
-        
+
         self.current_tag = tag # track the current tag to be checked in handle_data
-        
+
         if tag == 'a':
             for attr in attrs:
                 if attr[0] == 'href':
@@ -135,7 +128,7 @@ class Collector(HTMLParser):
 
     def handle_data(self,data):
         'extract the textual content of the page'
-        
+
         if self.current_tag in self.skip_tags:
             return # ensure that the current tag is of acceptable type, skip otherwise
 
@@ -151,7 +144,7 @@ class Collector(HTMLParser):
         url = url.lower()
 
         # remove local page shortcuts
-        url = url.split("#")[0] 
+        url = url.split("#")[0]
 
         # ensure url is http or https
         if urlparse(url)[0] not in ("http","https"): return ""

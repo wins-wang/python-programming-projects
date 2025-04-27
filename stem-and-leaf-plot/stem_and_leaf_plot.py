@@ -1,8 +1,3 @@
-#Assignment 0202 Stem-and-Leaf Implementation
-#Dawei Wang Apr.19,2020
-#YouTube Video Link:https://youtu.be/NlVMkFnVccE 
-#I have not given or received any unauthorized assistance on this assignment.
-
 import collections
 import sys
 
@@ -25,23 +20,23 @@ def fileConvert(n):
      # This part could be substituted by other paths
      if (n==1):
          #r before string convert string to raw string and make it readable as a path
-         filename = r"C:\Users\rocke\iCloudDrive\Desktop\Python Projects\Assignment0201\StemAndLeaf1.txt"
+         filename = r"StemAndLeaf1.txt"
      elif (n == 2):
-         filename = r"C:\Users\rocke\iCloudDrive\Desktop\Python Projects\Assignment0201\StemAndLeaf2.txt"
-     elif (n == 3):  
-         filename = r"C:\Users\rocke\iCloudDrive\Desktop\Python Projects\Assignment0201\StemAndLeaf3.txt"
+         filename = r"StemAndLeaf2.txt"
+     elif (n == 3):
+         filename = r"StemAndLeaf3.txt"
      # Open the datafile with file name, read file and save it in to lineList, then close the file
      infile = open(filename,"r")
      lineList = infile.readlines()
      infile.close()
-     #set a new empty list named value 
-     value = []         
+     #set a new empty list named value
+     value = []
      # add data in data file one by one to the list named value
      # chop any possible symbol and only keep the number
      for i in range(0,len(lineList)):
          value.append(int(lineList[i].strip()))
      # return the list after converting all data into this list
-     return value 
+     return value
 
 
 def getLeaf(values):
@@ -52,11 +47,11 @@ def getLeaf(values):
     leaves = collections.defaultdict(list)
     # set defalut min stem and max stem for furture opeartions
     min = max = values[0] // 10
-    # calculate each element in the input list and put them into corresponding list in the dictionary 
+    # calculate each element in the input list and put them into corresponding list in the dictionary
     for v in values:
         # get one digit leaf and no limitations on stem
         leaves[v//10].append(v%10)
-        # a is corresponding stem  
+        # a is corresponding stem
         a = v//10
         # check the min and max and reset them if necessary
         if min > a:
@@ -69,7 +64,7 @@ def getLeaf(values):
 
 def setStem(sMin, sMax):
     'Construct a list of stem by using input min and max value'
-    # set the stem list for the datafile. It contains all stem number from the minimum to maximum  
+    # set the stem list for the datafile. It contains all stem number from the minimum to maximum
     stem = list(range(sMin,sMax+1))
     # return the stem list
     return stem
@@ -91,18 +86,18 @@ def printStemLeaf(Stem,Leaves):
     'This function print the results in preset format. Input stem and leaves, it will draw the plot for you.'
     # print the head of plot
     print("The Stem-and-Leaf Plot")
-    # traversal containers and print the result 
+    # traversal containers and print the result
     for i in range(0,len(Stem)):
-        # x is stem 
+        # x is stem
         x = str(Stem[i])
         #sort the Leaves
         Leaves[Stem[i]].sort()
-        #convert Leaves in to a string with space in between and store it in y 
+        #convert Leaves in to a string with space in between and store it in y
         y = " ".join(map(str,Leaves[Stem[i]]))
         #print No.i+1 row with stem x and leaves y
         print(x +"\t| " + y)
 
- 
+
 def main():
     'Follow the instruction, give your choice and print the stem and leaf plot'
     print ("Welcome!")

@@ -54,3 +54,6 @@ This modularization ensures that each function has a **single, clear responsibil
 |:---|:---|
 | `stem_and_leaf_plot.py` | Main program code implementing the Stem-and-Leaf Plot generator |
 | `stem_and_leaf_plot_design.pdf` | Top-down structure chart and design documentation |
+| `StemAndLeaf1.txt` | Sample dataset for generating a simple stem-and-leaf plot |
+| `StemAndLeaf2.txt` | Sample dataset with larger numbers for expanded plotting |
+| `StemAndLeaf3.txt` | Sample dataset with four-digit numbers for more complex plots |
